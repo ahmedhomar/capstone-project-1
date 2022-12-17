@@ -1,16 +1,35 @@
 import math
 
 finance_calculator = input(
-    f"""\nChoose either 'investment' or 'bond' from the menu below to proceed:
-1. investment - to calculate the amount of interest you'll earn on your investment.
-2. bond - to calculate the amount you'l pay on your home loan.
+    f"""\n Choose either 'investment' or 'bond' from the menu below to proceed:\n
+1. investment - to calculate the amount of interest you'll earn on your investment.\n
+2. bond - to calculate the amount you'l pay on your home loan.\n
 """
 ).lower()
 
 if finance_calculator == "investment":
     deposit = float(input("How much money will you be depositing? "))
-    interest_rate = float("What is the percentage interest rate? ")
-    num_of_years = float(
-        "For how many years are you planning on investing this money? "
-    )
-    interest = input("Please choose 'Simple' or 'Compound' interest: ")
+    interest_rate = float(input("Enter the percentage interest rate: "))
+    num_of_years = float(input("For how many years are you planning on investing? "))
+    interest = input("Choose 'simple' or 'compound' interest: ").lower()
+    if interest == "simple":
+        total_amount = deposit * (1 + ((interest_rate / 100) * num_of_years))
+        print(
+            f"Your return on investment with simple interest applied is {total_amount:.2f}"
+        )
+    elif interest == "compound":
+        total_amount = deposit * math.pow((1 + (interest_rate / 100)), num_of_years)
+        print(
+            f"Your return on investment with compound interest applied is {total_amount:.2f}"
+        )
+
+# elif finance_calculator == "bond":
+#     house_value = float(input("What is the present value of the house? "))
+#     interest_rate = float("What is the percentage interest rate? ")
+#     num_of_months = float("Within how many months will you repay the bond? ")
+#     monthly_interest = interest_rate
+#     repayment =
+
+
+else:
+    print("Something went wrong: please check and try again.")
