@@ -92,9 +92,9 @@ elif finance_calculator == "bond":
           ------------------------------------------------
           Present Value of House: £{house_value:.2f}
           ------------------------------------------------
-          Annual interest Rate: {interest_rate} %
+          Annual interest Rate: {interest_rate:.2f} %
           ------------------------------------------------
-          Monthly Interest Rate: {monthly_interest} %
+          Monthly Interest Rate: {monthly_interest:.4f} %
           ------------------------------------------------
           Months of Repayment: {num_of_months:.0f}
           ------------------------------------------------
